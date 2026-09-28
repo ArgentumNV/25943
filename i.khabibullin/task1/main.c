@@ -187,6 +187,7 @@ int main(int argc, char *argv[])
     char options[] = "ispuU:cC:dvV:"; /* valid options */
     int opt;
     printf("argc equals %d\n", argc);
+
     while ((opt = getopt(argc, argv, options)) != EOF)
     {
         switch (opt)
