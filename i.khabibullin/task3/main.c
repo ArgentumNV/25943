@@ -12,7 +12,6 @@ void print_UIDS()
 int main(void)
 {
     print_UIDS();
-
     FILE *test_file = fopen("test.txt", "r+");
     if (test_file == NULL)
     {
