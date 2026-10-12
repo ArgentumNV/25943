@@ -10,6 +10,40 @@ typedef struct Node
     struct Node *next;
 } Node;
 
+void remove_arrow_keys(char *text)
+{
+    /* src читает исходную строку dst записывает оставшиеся символы */
+    char *src = text;
+    char *dst = text;
+
+    while (*src)
+    {
+        /* Код стрелки начинается с \033, затем идёт '[' или 'O' */
+        if (src[0] == '\033' && (src[1] == '[' || src[1] == 'O'))
+        {
+            char *end = src + 2;
+
+            /* Пропускаем параметры модификаторов например Ctrl или Shift */
+            while ((*end >= '0' && *end <= '9') || *end == ';')
+                ++end;
+
+            /* A — вверх, B — вниз, C — вправо D — влево */
+            if (*end >= 'A' && *end <= 'D')
+            {
+                /* Пропускаем весь код стрелки, не записывая его в результат */
+                src = end + 1;
+                continue;
+            }
+        }
+
+        /* Остальные символы сохраняем и перемещаем оба указателя дальше */
+        *dst++ = *src++;
+    }
+
+    /* Обозначаем новый конец строки после удаления кодов стрелок */
+    *dst = '\0';
+}
+
 void print_list(Node *head)
 {
     if (!head)
@@ -50,6 +84,8 @@ int main(void)
         {
             break;
         }
+
+        remove_arrow_keys(buffer);
 
         if (buffer[0] == '.')
         {
