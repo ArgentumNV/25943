@@ -1,0 +1,16 @@
+======================================================================
+                  ТЕСТОВЫЙ ДЛИННЫЙ ФАЙЛ (large_file.txt)
+======================================================================
+
+Строка 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Строка 2: Vestibulum ante ipsum primis in faucibus orci luctus et.
+Строка 3: Ultrices posuere cubilia curae; Sed id lorem id justo.
+Строка 4: Подпроцесс cat(1) должен прочитать и вывести весь этот текст.
+Строка 5: Родительский процесс тем временем ожидает системного вызова waitpid.
+Строка 6: Morbi ac felis non felis eleifend pretium.
+Строка 7: Phasellus sodales, elit in varius interdum, diam ligula.
+Строка 8: Pretium erat, non accumsan eros diam vitae orci.
+Строка 9: Donec imperdiet tellus ac magna vulputate elementum.
+Строка 10: Конец демонстрационного файла для лабораторной работы.
+
+======================================================================
